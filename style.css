@@ -1,335 +1,375 @@
 /* SMOOTH SCROLL */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #ffffff;
-    color: #3d2712;
-    font-family: 'Georgia', serif;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    line-height: 1.6;
+  background-color: #ffffff;
+  color: #3d2712;
+  font-family: "Georgia", serif;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  line-height: 1.5;
 }
 
 .main-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .classic-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color:#3d2712;
-    border-bottom: 2px solid  #ffffff;
-    z-index: 9999;
-    padding: 8px 0;
-    box-shadow: 0 2px 5px rgba(61, 39, 18, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3d2712;
+  border-bottom: 2px solid #ffffff;
+  z-index: 9999;
+  padding: 8px 0;
+  box-shadow: 0 2px 5px rgba(61, 39, 18, 0.05);
 }
 
 .nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: table;
-    width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: table;
+  width: 100%;
 }
 
 .nav-logo {
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    font-size: 15pt;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 1px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 15pt;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
 .nav-menu {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
 }
 
 .nav-item {
-    display: inline-block;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 9pt;
-    text-transform: uppercase;
-    margin-left: 25px;
-    letter-spacing: 0.5px;
-    position: relative; /* Diperlukan sebagai jangkar garis bawah */
-    padding-bottom: 4px;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 9pt;
+  text-transform: uppercase;
+  margin-left: 25px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 4px;
 }
 
 /* Membuat garis bawah tersembunyi di awal */
 .nav-item::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transform-origin: bottom left;
-    transition: transform 0.25s ease-out; /* Kecepatan animasi */
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom left;
+  transition: transform 0.5s ease-out; /* Kecepatan animasi */
 }
 
 /* Saat di-hover, garis akan memanjang mulus */
 .nav-item:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 /* MINI LANDING PAGE AREA */
 .mini-landing {
-    text-align: center;
-    padding: 80px 20px;
-    border-bottom: 2px solid #3d2712;
-    margin-bottom: 20px;
+  text-align: center;
+  padding: 140px 0px;
+  border-bottom: 2px solid #3d2712;
+  margin-bottom: 20px;
 }
 
 .landing-title {
-    font-size: 42pt;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    color: #3d2712;
+  font-size: 60pt;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #3d2712;
 }
 
 .landing-tagline {
-    font-style: italic;
-    font-size: 13pt;
-    color: #6e543c;
-    margin-bottom: 35px;
+  font-style: italic;
+  font-size: 20pt;
+  color: #6e543c;
+  margin-bottom: 35px;
 }
 
-/* Tombol Khusus Landing Page (Agar Tidak Melebar) */
+/* Tombol Khusus Landing Page*/
 .btn-landing {
-    display: inline-block;
-    width: auto;
-    padding: 12px 40px;
-    text-decoration: none;
-    margin: 0 auto;
+  display: inline-block;
+  width: auto;
+  padding: 12px 40px;
+  text-decoration: none;
+  margin: 0 auto;
 }
 
 /* WORKSPACE GRID INTERFACE */
 .workspace-grid {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    padding-top: 50px;
-    margin-bottom: 20px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding-top: 50px;
+  margin-bottom: 20px;
 }
 
 .workspace-row {
-    display: table-row;
+  display: table-row;
 }
 
 .workspace-cell {
-    display: table-cell;
-    vertical-align: top;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .col-form {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
 .col-output {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .app-section {
-    padding-top: 60px;
-    margin-bottom: 40px;
+  padding-top: 60px;
+  margin-bottom: 40px;
 }
 
 /* CARDS STRUCTURAL */
 .classic-card {
-    background: #ffffff;
-    border: 2px solid #3d2712;
-    padding: 25px;
+  background: #ffffff;
+  border: 2px solid #3d2712;
+  padding: 25px;
 }
 
 .section-title {
-    font-size: 13pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #3d2712;
-    padding-bottom: 5px;
+  font-size: 13pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #3d2712;
+  padding-bottom: 5px;
 }
 
 /* INTERFACE FIELD FORM INPUTS */
 .form-group {
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .form-group label {
-    display: block;
-    font-size: 9.5pt;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 9.5pt;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
+/* DROPDOWN & FORM INPUT TEMA KLASIK RETRO */
 .classic-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #3d2712;
-    font-family: 'Arial', sans-serif;
-    font-size: 9.5pt;
-    background-color: #ffffff;
-    color: #3d2712;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3d2712;
+  font-family: "Arial", sans-serif;
+  font-size: 9.5pt;
+  background-color: #ffffff;
+  color: #3d2712;
+  border-radius: 0;
+  transition: all 0.2s ease;
 }
 
+/* Elemen <select> (Dropdown) */
+select.classic-input {
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fdfbf7;
+
+  /* Trik menghilangkan panah bawaan browser */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Menambahkan kustom panah klasik */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%233d2712' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 35px;
+
+  /* Efek bayangan tebal halus khas gaya retro */
+  box-shadow: 2px 2px 0px #6e543c;
+}
+
+/* Efek Fokus saat Elemen Diklik / Dipilih */
 .classic-input:focus {
-    outline: 2px solid #3d2712;
+  outline: none;
+  background-color: #ffffff;
+  border-color: #3d2712;
+  box-shadow: 4px 4px 0px #3d2712; /* Bayangan membesar tegas saat aktif */
+  transform: translate(-2px, -2px); /* Efek sedikit mengangkat saat fokus */
+}
+
+/* Mengatur Warna List Pilihan di Dalam Dropdown */
+select.classic-input option {
+  background-color: #ffffff;
+  color: #3d2712;
+  font-family: "Georgia", serif;
+  padding: 10px;
 }
 
 textarea.classic-input {
-    font-family: 'Georgia', serif;
-    resize: none;
+  font-family: "Georgia", serif;
+  resize: none;
 }
 
 /* LIVE OUTPUT CONTAINER & PREVIEW ATURAN GANTUNG */
 .label-preview {
-    display: block;
-    font-size: 9.5pt;
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 9.5pt;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .output-container {
-    background-color: #fdfbf7;
-    border: 1px solid #3d2712;
-    padding: 15px;
-    min-height: 110px;
-    margin-bottom: 15px;
+  background-color: #fdfbf7;
+  border: 1px solid #3d2712;
+  padding: 15px;
+  min-height: 110px;
+  margin-bottom: 15px;
 }
 
 .dapus-preview {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11pt;
-    line-height: 2.0; /* Double Spacing */
-    padding-left: 36px;
-    text-indent: -36px; /* Hanging Indent 0.5 Inch */
-    text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
+  line-height: 2; /* Double Spacing */
+  padding-left: 36px;
+  text-indent: -36px; /* Hanging Indent 0.5 Inch */
+  text-align: left;
 }
 
-/* STANDARISASI BUTTON KLASIK RETRO (SERAGAM UNTUK SEMUA TOMBOL) */
+/* BUTTON KLASIK RETRO*/
 .btn-classic {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    font-family: 'Georgia', serif;
-    font-size: 11pt;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 12px;
-    text-align: center;
-    border: 2px solid #3d2712;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-family: "Georgia", serif;
+  font-size: 11pt;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+  text-align: center;
+  border: 2px solid #3d2712;
 }
 
 .btn-primary {
-    background-color: #3d2712;
-    color: #ffffff;
-    box-shadow: 4px 4px 0px #6e543c;
+  background-color: #3d2712;
+  color: #ffffff;
+  box-shadow: 4px 4px 0px #6e543c;
 }
 
 .btn-primary:hover {
-    background-color: #4e351b;
+  background-color: #4e351b;
 }
 
 .btn-primary:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #6e543c;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #6e543c;
 }
 
 .btn-secondary {
-    background-color: #ffffff;
-    color: #3d2712;
-    box-shadow: 4px 4px 0px #3d2712;
+  background-color: #ffffff;
+  color: #3d2712;
+  box-shadow: 4px 4px 0px #3d2712;
 }
 
 .btn-secondary:hover {
-    background-color: #fdfbf7;
+  background-color: #fdfbf7;
 }
 
 .btn-secondary:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #3d2712;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #3d2712;
 }
 
-/* INTERNAL GRID TATA LETAK ABOUT DEVELOPE */
+/* ABOUT */
 .about-grid {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .about-row {
-    display: table-row;
+  display: table-row;
 }
 
 .about-cell {
-    display: table-cell;
-    vertical-align: top;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .info-text {
-    padding-right: 30px;
-    font-size: 10pt;
-    text-align: justify;
+  padding-right: 30px;
+  font-size: 10pt;
+  text-align: justify;
 }
 
 .info-text h3 {
-    font-size: 11pt;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    color: #3d2712;
+  font-size: 11pt;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #3d2712;
 }
 
 .info-form {
-    padding-left: 20px;
-    border-left: 1px dashed #3d2712;
+  padding-left: 20px;
+  border-left: 1px dashed #3d2712;
 }
 
 .info-form h3 {
-    font-size: 11pt;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+  font-size: 11pt;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 /* TABEL AKADEMIK KLASIK */
 .classic-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
-.classic-table th, .classic-table td {
-    border: 1px solid #3d2712;
-    padding: 10px;
-    font-size: 9.5pt;
+.classic-table th,
+.classic-table td {
+  border: 1px solid #3d2712;
+  padding: 10px;
+  font-size: 9.5pt;
 }
 
 .classic-table th {
-    background-color: #3d2712;
-    color: #ffffff;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 8.5pt;
+  background-color: #3d2712;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 8.5pt;
 }

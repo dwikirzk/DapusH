@@ -12,6 +12,7 @@
       <div class="nav-container">
         <a href="#" class="nav-logo">DapusH</a>
         <div class="nav-menu">
+          <a href="#workspace-area" class="nav-item">Home</a>
           <a href="#panduan-section" class="nav-item">Panduan</a>
           <a href="#about-section" class="nav-item">About</a>
         </div>
@@ -27,7 +28,7 @@
             Push rujukanmu, generate daftar pustaka rapi tanpa cacat visual!
           </p>
           <a href="#workspace-area" class="btn-classic btn-primary btn-landing"
-            >MULAI GENERATE ↓</a
+            >MULAI GENERATE</a
           >
         </div>
       </header>
@@ -68,7 +69,7 @@
                 <input
                   type="text"
                   class="classic-input"
-                  placeholder="Contoh: Panduan Struktur Data"
+                  placeholder="Contoh: Analisis Quick Sort dan Desain Algoritma"
                 />
               </div>
               <div class="form-group">
@@ -76,7 +77,7 @@
                 <input
                   type="text"
                   class="classic-input"
-                  placeholder="Contoh: Bandung"
+                  placeholder="Contoh: Tulungagung"
                 />
               </div>
               <div class="form-group">
@@ -109,8 +110,8 @@
               <div class="output-container">
                 <div class="dapus-preview">
                   Rozak, M. D. (2026).
-                  <em>Panduan Dasar Struktur Data untuk Pemula</em>. Bandung:
-                  Informatika Press.
+                  <em>Analisis Quick Sort dan Desain Algoritma</em>.
+                  Tulungagung: Informatika Press.
                 </div>
               </div>
               <button class="btn-classic btn-primary">SALIN FORMAT WORD</button>
@@ -133,36 +134,76 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>APA</strong></td>
-              <td>Sosial, Psikologi, Pendidikan, Bisnis</td>
-              <td>Tahun di awal dengan kurung <code>(2026)</code>.</td>
+              <td><strong>APA (7th Ed.)</strong></td>
+              <td>
+                Sosial, Psikologi, Pendidikan, Bisnis, Ekonomi, Ilmu Komunikasi
+              </td>
+              <td>
+                Nama belakang ditulis penuh diikuti inisial depan. Tahun terbit
+                diletakkan di awal menggunakan tanda kurung setelah nama
+                penulis. Judul buku dicetak miring. Contoh:
+                <code>Rozak, M. D. (2026). Judul Buku.</code>
+              </td>
             </tr>
             <tr>
               <td><strong>IEEE</strong></td>
-              <td>Informatika, Teknik, Ilmu Komputer</td>
-              <td>Menggunakan indeks angka kurung siku <code>[1]</code>.</td>
-            </tr>
-            <tr>
-              <td><strong>MLA</strong></td>
-              <td>Sastra, Bahasa, Seni, Humaniora</td>
-              <td>Nama depan utuh, Tahun di paling akhir.</td>
-            </tr>
-            <tr>
-              <td><strong>Chicago</strong></td>
-              <td>Sejarah, Komunikasi, Jurnalistik</td>
               <td>
-                Aturan tanda titik dua <code>:</code> kota terbit sangat ketat.
+                Informatika, Teknik Elektro, Ilmu Komputer, Sistem Informasi,
+                Teknologi Informasi
+              </td>
+              <td>
+                Urutan rujukan tidak berdasarkan abjad, melainkan berdasarkan
+                urutan kemunculan di teks menggunakan nomor dalam kurung siku
+                <code>[1]</code>. Nama penulis diawali inisial baru nama
+                belakang. Judul bab/artikel jurnal diberi tanda petik dua,
+                sedangkan judul buku/jurnal dicetak miring.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>MLA (9th Ed.)</strong></td>
+              <td>Sastra, Bahasa, Seni, Kebudayaan, Humaniora</td>
+              <td>
+                Nama depan penulis ditulis utuh tanpa disingkat (Nama Belakang,
+                Nama Depan). Tahun terbit diletakkan di paling akhir string
+                sitasi setelah nama penerbit. Sangat jarang menggunakan elemen
+                kota penerbit.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Chicago (Notes-Bibliography)</strong></td>
+              <td>Sejarah, Humaniora, Seni, Beberapa Jurnal Sastra</td>
+              <td>
+                Sangat ketat pada penggunaan tanda baca. Menggunakan format
+                tanda titik dua <code>:</code> yang memisahkan antara Kota
+                Terbit dan Nama Penerbit secara rigid. Judul utama diwajibkan
+                menggunakan format huruf kapital di setiap awal kata (Title
+                Case).
               </td>
             </tr>
             <tr>
               <td><strong>Harvard</strong></td>
-              <td>Ekonomi, Manajemen, Akuntansi</td>
-              <td>Mirip APA tanpa tanda titik di inisial nama.</td>
+              <td>Ilmu Ekonomi, Manajemen, Akuntansi, Bisnis Internasional</td>
+              <td>
+                Menggunakan sistem Author-Date. Gaya penulisan komponen urutan
+                mirip dengan APA style, namun memiliki perbedaan karakteristik
+                utama yaitu tanpa menggunakan tanda titik setelah penulisan
+                inisial nama depan penulis dan tahun terbit tidak wajib dikurung
+                pada beberapa rumpun variasi.
+              </td>
             </tr>
             <tr>
               <td><strong>Vancouver</strong></td>
-              <td>Kedokteran, Ilmu Kesehatan, Farmasi</td>
-              <td>Sistem nomor urut <code>1.</code> tanpa kurung.</td>
+              <td>
+                Kedokteran, Ilmu Keperawatan, Farmasi, Kebidanan, Kesehatan
+                Masyarakat
+              </td>
+              <td>
+                Menggunakan sistem penomoran angka numerik berurutan
+                <code>1.</code> langsung tanpa tanda kurung penutup. Penulisan
+                nama penulis ditulis sangat ringkas (Nama Belakang diikuti
+                inisial depan tanpa tanda koma atau titik pemisah di antara
+                inisial). Tahun diletakkan di bagian akhir.
+              </td>
             </tr>
           </tbody>
         </table>
