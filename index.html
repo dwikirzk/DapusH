@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DapusH - Generator Daftar Pustaka</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR ATAS -->
+    <nav class="classic-navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">DapusH</a>
+        <div class="nav-menu">
+          <a href="#panduan-section" class="nav-item">Panduan</a>
+          <a href="#about-section" class="nav-item">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-wrapper">
+      <!-- MINI LANDING PAGE -->
+      <header class="mini-landing">
+        <div class="landing-inner">
+          <h1 class="landing-title">DapusH</h1>
+          <p class="landing-tagline">
+            Push rujukanmu, generate daftar pustaka rapi tanpa cacat visual!
+          </p>
+          <a href="#workspace-area" class="btn-classic btn-primary btn-landing"
+            >MULAI GENERATE ↓</a
+          >
+        </div>
+      </header>
+
+      <!-- WORKSPACE UTAMA (2 KOLOM) -->
+      <div class="workspace-grid" id="workspace-area">
+        <div class="workspace-row">
+          <!-- KOLOM KIRI: FORM INPUT -->
+          <div class="workspace-cell col-form">
+            <div class="classic-card">
+              <h2 class="section-title">Parameter Referensi</h2>
+              <div class="form-group">
+                <label>Tipe Sumber</label>
+                <select class="classic-input" id="tipe-sumber">
+                  <option>Buku</option>
+                  <option>Jurnal Ilmiah</option>
+                  <option>Website / URL</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Nama Penulis</label>
+                <input
+                  type="text"
+                  class="classic-input"
+                  placeholder="Contoh: Mohamad Dwiki Rozak"
+                />
+              </div>
+              <div class="form-group">
+                <label>Tahun Terbit</label>
+                <input
+                  type="text"
+                  class="classic-input"
+                  placeholder="Contoh: 2026"
+                />
+              </div>
+              <div class="form-group">
+                <label>Judul Buku</label>
+                <input
+                  type="text"
+                  class="classic-input"
+                  placeholder="Contoh: Panduan Struktur Data"
+                />
+              </div>
+              <div class="form-group">
+                <label>Kota Penerbit</label>
+                <input
+                  type="text"
+                  class="classic-input"
+                  placeholder="Contoh: Bandung"
+                />
+              </div>
+              <div class="form-group">
+                <label>Nama Penerbit</label>
+                <input
+                  type="text"
+                  class="classic-input"
+                  placeholder="Contoh: Informatika Press"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN: OUTPUT & CONFIG -->
+          <div class="workspace-cell col-output">
+            <div class="classic-card">
+              <h2 class="section-title">Format & Hasil</h2>
+              <div class="form-group">
+                <label>Pilih Format Sitasi</label>
+                <select class="classic-input" id="format-sitasi">
+                  <option>APA Style</option>
+                  <option>IEEE Style (Informatika)</option>
+                  <option>MLA Style</option>
+                  <option>Chicago Style</option>
+                  <option>Harvard Style</option>
+                  <option>Vancouver Style</option>
+                </select>
+              </div>
+              <label class="label-preview">Pratinjau Daftar Pustaka</label>
+              <div class="output-container">
+                <div class="dapus-preview">
+                  Rozak, M. D. (2026).
+                  <em>Panduan Dasar Struktur Data untuk Pemula</em>. Bandung:
+                  Informatika Press.
+                </div>
+              </div>
+              <button class="btn-classic btn-primary">SALIN FORMAT WORD</button>
+              <button class="btn-classic btn-secondary">RESET FORM</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION PANDUAN -->
+      <section class="app-section" id="panduan-section">
+        <h2 class="section-title">Panduan Kategori Format</h2>
+        <table class="classic-table">
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Rumpun Ilmu / Jurusan</th>
+              <th>Karakteristik Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>APA</strong></td>
+              <td>Sosial, Psikologi, Pendidikan, Bisnis</td>
+              <td>Tahun di awal dengan kurung <code>(2026)</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>IEEE</strong></td>
+              <td>Informatika, Teknik, Ilmu Komputer</td>
+              <td>Menggunakan indeks angka kurung siku <code>[1]</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>MLA</strong></td>
+              <td>Sastra, Bahasa, Seni, Humaniora</td>
+              <td>Nama depan utuh, Tahun di paling akhir.</td>
+            </tr>
+            <tr>
+              <td><strong>Chicago</strong></td>
+              <td>Sejarah, Komunikasi, Jurnalistik</td>
+              <td>
+                Aturan tanda titik dua <code>:</code> kota terbit sangat ketat.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Harvard</strong></td>
+              <td>Ekonomi, Manajemen, Akuntansi</td>
+              <td>Mirip APA tanpa tanda titik di inisial nama.</td>
+            </tr>
+            <tr>
+              <td><strong>Vancouver</strong></td>
+              <td>Kedokteran, Ilmu Kesehatan, Farmasi</td>
+              <td>Sistem nomor urut <code>1.</code> tanpa kurung.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SECTION ABOUT (PALING BAWAH SENDIRI) -->
+      <section class="app-section" id="about-section">
+        <div class="classic-card">
+          <h2 class="section-title">About DapusH</h2>
+
+          <div class="about-grid">
+            <div class="about-row">
+              <!-- Informasi Proyek -->
+              <div class="about-cell info-text">
+                <h3>Tujuan & Manfaat</h3>
+                <p>
+                  <strong>DapusH</strong> diciptakan untuk menyelesaikan kendala
+                  klasik mahasiswa dalam menyusun daftar rujukan karya ilmiah.
+                  Aplikasi ini secara otomatis memformat data mentah rujukan
+                  menjadi standar sitasi akademik resmi, lengkap dengan
+                  pengaturan visual
+                  <strong>paragraf gantung (hanging indent)</strong> dan
+                  <strong>spasi ganda (2.0)</strong> yang siap disalin langsung
+                  ke Microsoft Word tanpa merusak tatanan dokumen dokumen akhir.
+                </p>
+
+                <h3 style="margin-top: 15px">Pengembang</h3>
+                <p>
+                  Dikembangkan secara mandiri oleh
+                  <strong>Mohamad Dwiki Rozak</strong>, Mahasiswa Informatika
+                  Semester 2 (NIM: 25161562021, Kelas INF 2A) sebagai proyek
+                  produktif pengisi masa liburan perkuliahan.
+                </p>
+              </div>
+
+              <!-- Form Kontak Saran WhatsApp -->
+              <div class="about-cell info-form">
+                <h3>Kotak Saran</h3>
+                <div class="form-group">
+                  <label>Nama</label>
+                  <input
+                    type="text"
+                    id="saran-nama"
+                    class="classic-input"
+                    placeholder="Contoh: Ahmad"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Isi Pesan / Kritik / Saran</label>
+                  <textarea
+                    id="saran-pesan"
+                    class="classic-input"
+                    rows="4"
+                    placeholder="Tuliskan saran perbaikan aplikasi di sini..."
+                  ></textarea>
+                </div>
+                <button
+                  type="button"
+                  class="btn-classic btn-primary"
+                  onclick="kirimSaranWA()"
+                  style="font-size: 10pt; padding: 8px"
+                >
+                  KIRIM VIA WHATSAPP
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Logika Integrasi WhatsApp Sementara -->
+    <script>
+      function kirimSaranWA() {
+        const nama = document.getElementById("saran-nama").value;
+        const pesan = document.getElementById("saran-pesan").value;
+
+        if (!nama || !pesan) {
+          alert("Mohon isi nama dan pesan saran Anda terlebih dahulu.");
+          return;
+        }
+
+        const teksFormat = `Halo Dwiki, saya *${nama}* ingin memberikan saran untuk web *DapusH*:\n\n"${pesan}"`;
+        const URL_WA = `https://wa.me/6281234567890?text=${encodeURIComponent(teksFormat)}`; // Ganti dengan nomor WhatsApp Anda nanti
+
+        window.open(URL_WA, "_blank");
+      }
+    </script>
+  </body>
+</html>
