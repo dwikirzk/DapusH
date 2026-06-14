@@ -16,7 +16,6 @@ const listDapus = document.getElementById("list-dapus");
 const kumpulanArea = document.getElementById("kumpulan-dapus-area");
 const countDapus = document.getElementById("count-dapus");
 
-// Array penyimpan daftar sitasi
 let daftarPustaka = [];
 
 /*FUNGSI PEMBANTU NAMA*/
@@ -38,10 +37,10 @@ function getNama(n, type) {
 /*GENERATOR*/
 function generateStringSitasi() {
   const p = inputPenulis.value;
-  const t = inputTahun.value;
-  const j = inputJudul.value;
-  const k = inputKota.value;
-  const pen = inputPenerbit.value;
+  const t = inputTahun.value || "Tahun";
+  const j = inputJudul.value || "Judul";
+  const k = inputKota.value || "Kota";
+  const pen = inputPenerbit.value || "Penerbit";
   const vol = inputVol.value || "X";
   const no = inputNo.value || "X";
 
@@ -65,7 +64,7 @@ function generateStringSitasi() {
         : src === "Jurnal Ilmiah"
           ? `${nInisial} (${t}). ${j}. *${pen}*, ${vol}(${no}).`
           : `${nInisial} (${t}). *${j}*. Diakses dari ${pen}.`;
-  } else if (fmt === "IEEE Style (Informatika)") {
+  } else if (fmt === "IEEE Style") {
     h =
       src === "Buku"
         ? `[NUM] ${nIEEE}, *${j}*. ${k}: ${pen}, ${t}.`
@@ -102,7 +101,6 @@ function generateStringSitasi() {
           : `NUM. ${nVan}. ${j}. ${k}: ${pen}; ${t}.`;
   }
 
-  // Untuk pratinjau tunggal, kita ganti NUM dengan 1
   let previewStr = h.replace(/NUM/g, "1");
   return previewStr.replace(/\*(.*?)\*/g, "<em>$1</em>");
 }
@@ -118,129 +116,82 @@ function renderList() {
     kumpulanArea.style.display = "none";
     return;
   }
-
   kumpulanArea.style.display = "block";
   countDapus.innerText = `(${daftarPustaka.length})`;
 
-  // Sortir secara Abjad (Kecuali IEEE & Vancouver yang pakai penomoran berurut)
   const fmt = formatSitasi.value;
-  if (!fmt.includes("IEEE") && !fmt.includes("Vancouver")) {
-    daftarPustaka.sort();
-  }
+  if (!fmt.includes("IEEE") && !fmt.includes("Vancouver")) daftarPustaka.sort();
 
   daftarPustaka.forEach((item, index) => {
     let displayStr = item;
-    // Ganti penomoran dinamis untuk IEEE dan Vancouver
     if (fmt.includes("IEEE"))
       displayStr = displayStr.replace(/\[1\]/g, `[${index + 1}]`);
     if (fmt.includes("Vancouver"))
       displayStr = displayStr.replace(/1\./g, `${index + 1}.`);
-
-    // Membungkus list dengan class hanging indent
     listDapus.innerHTML += `<div class="dapus-item dapus-preview">${displayStr}</div>`;
   });
 }
 
+// Event Listeners Tombol
 document.getElementById("btn-tambah").addEventListener("click", () => {
-  const p = inputPenulis.value;
-  if (!p)
-    return alert(
-      "Silakan isi nama penulis terlebih dahulu untuk dimasukkan ke daftar!",
-    );
-
-  const currentHTML = generateStringSitasi();
-  daftarPustaka.push(currentHTML);
+  if (!inputPenulis.value) return alert("Silakan isi nama penulis!");
+  daftarPustaka.push(generateStringSitasi());
   renderList();
-
-  // Otomatis bersihkan form setelah ditambahkan
   document.getElementById("btn-reset").click();
 });
 
 document.getElementById("btn-clear-list").addEventListener("click", () => {
-  if (
-    confirm(
-      "Apakah Anda yakin ingin menghapus seluruh daftar pustaka yang telah dibuat?",
-    )
-  ) {
+  if (confirm("Hapus semua daftar?")) {
     daftarPustaka = [];
     renderList();
   }
 });
 
-/*EKSPOR KE RTF DAN SALIN*/
-
-// 1. Ekspor ke File Word (.RTF)
-document.getElementById("btn-export-rtf").addEventListener("click", () => {
-  if (daftarPustaka.length === 0) return alert("Daftar Pustaka kosong!");
-
-  // Header struktur file Word RTF
-  let rtf =
-    "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat{\\fonttbl{\\f0\\froman\\fcharset0 Times New Roman;}}\n";
-
-  const listItems = listDapus.querySelectorAll(".dapus-item");
-  listItems.forEach((item) => {
-    let text = item.innerHTML;
-    // Ubah format HTML Miring ke format RTF Miring (\i ... \i0)
-    text = text.replace(/<em>/g, "{\\i ").replace(/<\/em>/g, "}");
-
-    // Logika Paragraf RTF:
-    // \pard = Paragraf baru
-    // \fi-720 \li720 = Hanging Indent (Baris pertama mundur, baris kedua dst menjorok)
-    // \sl480 \slmult1 = Spasi Ganda 2.0
-    rtf +=
-      "\\pard\\fi-720\\li720\\sl480\\slmult1\\f0\\fs24 " + text + "\\par\n";
-  });
-
-  rtf += "}";
-
-  // pengunduhan file
-  const blob = new Blob([rtf], { type: "application/rtf" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "Daftar_Pustaka_DapusH.rtf";
-  a.click();
-  URL.revokeObjectURL(url);
-});
-
-// Salin Semua ke Clipboard Word
-document.getElementById("btn-copy-all").addEventListener("click", () => {
+// Salin Semua
+document.getElementById("btn-copy-all").addEventListener("click", function () {
   if (daftarPustaka.length === 0) return;
-
   const temp = document.createElement("div");
   temp.innerHTML = `<div style="font-family: 'Times New Roman', serif; font-size: 12pt; line-height: 2.0;">${listDapus.innerHTML}</div>`;
-
   document.body.appendChild(temp);
   const range = document.createRange();
   range.selectNodeContents(temp);
   window.getSelection().removeAllRanges();
   window.getSelection().addRange(range);
-
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
   document.body.removeChild(temp);
-
-  alert(
-    "Daftar berhasil disalin! Silakan Paste di Word. Jika baris kedua belum menjorok, tekan Ctrl+T.",
-  );
+  alert("Disalin! Jika gantung belum muncul, tekan Ctrl+T di Word.");
 });
 
-/*EVENT LISTENERS FORM AKTIF*/
+// Download RTF
+document
+  .getElementById("btn-export-rtf")
+  .addEventListener("click", function () {
+    if (daftarPustaka.length === 0) return alert("Daftar kosong!");
+    let rtf = "{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0 Times New Roman;}}\n";
+    const items = listDapus.querySelectorAll(".dapus-item");
+    items.forEach((item) => {
+      let text = item.innerHTML
+        .replace(/<em>/g, "{\\i ")
+        .replace(/<\/em>/g, "}");
+      rtf +=
+        "\\pard\\fi-720\\li720\\sl480\\slmult1\\f0\\fs24 " + text + "\\par\n";
+    });
+    rtf += "}";
+    const blob = new Blob([rtf], { type: "application/rtf" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Daftar_Pustaka.rtf";
+    a.click();
+  });
+
 tipeSumber.addEventListener("change", () => {
   groupJurnal.style.display =
     tipeSumber.value === "Jurnal Ilmiah" ? "block" : "none";
-  // Sesuaikan placeholder pada kolom "Nama Penerbit"
-  if (tipeSumber.value === "Jurnal Ilmiah") {
-    inputPenerbit.placeholder = "Contoh: Jurnal Teknik Informatika";
-  } else if (tipeSumber.value === "Website / URL") {
-    inputPenerbit.placeholder = "Contoh: https://dapush.com/artikel";
-  } else {
-    inputPenerbit.placeholder = "Contoh: Informatika Press";
-  }
   updateLivePreview();
 });
 
-// Update otomatis tampilan list jika user mengganti format
 formatSitasi.addEventListener("change", () => {
   updateLivePreview();
   renderList();
@@ -271,5 +222,4 @@ document.getElementById("btn-reset").addEventListener("click", () => {
   updateLivePreview();
 });
 
-// Inisiasi pemuatan pertama
 updateLivePreview();
