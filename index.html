@@ -68,12 +68,12 @@
 
               <div class="form-group">
                 <label>Judul Buku / Artikel</label>
-                <input
-                  type="text"
+                <textarea
                   class="classic-input"
                   id="input-judul"
-                  placeholder="Contoh: Analisis Quick Sort dan Desain Algoritma"
-                />
+                  rows="2"
+                  placeholder="Contoh: Analisis hubungan antara Fear Of Missing Out (FOMO) dengan perilaku Digital Hoarding pada mahasiswa"
+                ></textarea>
               </div>
 
               <div class="form-group">
@@ -111,7 +111,7 @@
                     type="text"
                     class="classic-input"
                     id="input-vol"
-                    placeholder="Contoh: 12"
+                    placeholder="Contoh: 14"
                   />
                 </div>
                 <div class="form-group">
@@ -120,7 +120,7 @@
                     type="text"
                     class="classic-input"
                     id="input-no"
-                    placeholder="Contoh: 3"
+                    placeholder="Contoh: 1"
                   />
                 </div>
               </div>
@@ -140,10 +140,10 @@
               <h2 class="section-title">Format & Hasil</h2>
 
               <div class="form-group">
-                <label>Pilih Format Sitasi</label>
+                <label>Pilih Format</label>
                 <select class="classic-input" id="format-sitasi">
                   <option>APA Style</option>
-                  <option>IEEE Style (Informatika)</option>
+                  <option>IEEE Style</option>
                   <option>MLA Style</option>
                   <option>Chicago Style</option>
                   <option>Harvard Style</option>
@@ -154,7 +154,8 @@
               <label class="label-preview">Pratinjau Saat Ini</label>
               <div class="output-container">
                 <div class="dapus-preview" id="live-preview">
-                  Isi form di kiri untuk mulai...
+                  Isi form parameter referensi di kiri untuk melihat
+                  pratinjau...
                 </div>
               </div>
 
@@ -163,7 +164,7 @@
                 id="btn-tambah"
                 style="margin-top: 10px"
               >
-                + TAMBAH KE DAFTAR PUSTAKA
+                TAMBAH KE DAFTAR PUSTAKA
               </button>
 
               <div
@@ -208,7 +209,7 @@
                     <button
                       class="btn-classic btn-primary"
                       id="btn-export-rtf"
-                      style="margin-bottom: 0; background-color: #4e351b"
+                      style="margin-bottom: 0;"
                     >
                       DOWNLOAD .RTF
                     </button>
@@ -322,15 +323,15 @@
                   pengaturan visual
                   <strong>paragraf gantung (hanging indent)</strong> dan
                   <strong>spasi ganda (2.0)</strong> yang siap disalin langsung
-                  ke Microsoft Word tanpa merusak tatanan dokumen akhir.
+                  ke Microsoft Word tanpa merusak tatanan dokumen akhir atau
+                  bahkan <strong>download file .rtfnya</strong> langsung
                 </p>
 
                 <h3 style="margin-top: 15px">Pengembang</h3>
                 <p>
                   Dikembangkan secara mandiri oleh
                   <strong>Mohamad Dwiki Rozak</strong>, Mahasiswa Informatika
-                  Semester 2 (NIM: 25161562021, Kelas INF 2A) sebagai proyek
-                  produktif pengisi masa liburan perkuliahan.
+                  Semester 2
                 </p>
               </div>
 
@@ -342,7 +343,7 @@
                     type="text"
                     id="saran-nama"
                     class="classic-input"
-                    placeholder="Contoh: Ahmad"
+                    placeholder="Contoh: Rozak"
                   />
                 </div>
                 <div class="form-group">
@@ -351,7 +352,7 @@
                     id="saran-pesan"
                     class="classic-input"
                     rows="4"
-                    placeholder="Tuliskan saran perbaikan aplikasi di sini..."
+                    placeholder="Tuliskan saran dan kritik perbaikan aplikasi di sini..."
                   ></textarea>
                 </div>
                 <button
@@ -375,12 +376,14 @@
         const pesan = document.getElementById("saran-pesan").value;
 
         if (!nama || !pesan) {
-          alert("Mohon isi nama dan pesan saran Anda terlebih dahulu.");
+          alert(
+            "Mohon isi nama dan pesan saran dan kritik Anda terlebih dahulu.",
+          );
           return;
         }
 
-        const teksFormat = `Halo Dwiki, saya *${nama}* ingin memberikan saran untuk web *DapusH*:\n\n"${pesan}"`;
-        const URL_WA = `https://wa.me/6281234567890?text=${encodeURIComponent(teksFormat)}`;
+        const teksFormat = `Halo, saya *${nama}* ingin memberikan saran dan kritik untuk web *DapusH*:\n\n"${pesan}"`;
+        const URL_WA = `https://wa.me/6285755305608?text=${encodeURIComponent(teksFormat)}`;
 
         window.open(URL_WA, "_blank");
       }

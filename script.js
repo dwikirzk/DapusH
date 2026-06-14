@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. DEKLARASI ELEMEN DOM
-   ========================================================================== */
+/*DEKLARASI ELEMEN DOM*/
 const tipeSumber = document.getElementById("tipe-sumber");
 const formatSitasi = document.getElementById("format-sitasi");
 
@@ -21,9 +19,7 @@ const countDapus = document.getElementById("count-dapus");
 // Array penyimpan daftar sitasi
 let daftarPustaka = [];
 
-/* ==========================================================================
-   2. FUNGSI PEMBANTU NAMA
-   ========================================================================== */
+/*FUNGSI PEMBANTU NAMA*/
 function getNama(n, type) {
   if (!n) return "Penulis";
   const k = n.trim().split(/\s+/);
@@ -39,9 +35,7 @@ function getNama(n, type) {
   return n;
 }
 
-/* ==========================================================================
-   3. MESIN GENERATOR (DINAMIS UNTUK SEMUA FORMAT & SUMBER)
-   ========================================================================== */
+/*GENERATOR*/
 function generateStringSitasi() {
   const p = inputPenulis.value;
   const t = inputTahun.value;
@@ -54,7 +48,8 @@ function generateStringSitasi() {
   const fmt = formatSitasi.value;
   const src = tipeSumber.value;
 
-  if (!p && !t && !j) return "Isi form di kiri untuk mulai...";
+  if (!p && !t && !j)
+    return "Isi form parameter referensi di kiri untuk melihat pratinjau...";
 
   const nInisial = getNama(p, "inisial");
   const nUtuh = getNama(p, "utuh");
@@ -63,7 +58,6 @@ function generateStringSitasi() {
 
   let h = "";
 
-  // LOGIKA PERAKITAN SUPER LENGKAP (Sudah diperbaiki: mengambil variabel pen untuk nama jurnal)
   if (fmt === "APA Style") {
     h =
       src === "Buku"
@@ -117,9 +111,7 @@ function updateLivePreview() {
   livePreview.innerHTML = generateStringSitasi();
 }
 
-/* ==========================================================================
-   4. SISTEM MANAJEMEN DAFTAR PUSTAKA
-   ========================================================================== */
+/*SISTEM MANAJEMEN DAFTAR PUSTAKA */
 function renderList() {
   listDapus.innerHTML = "";
   if (daftarPustaka.length === 0) {
@@ -175,9 +167,7 @@ document.getElementById("btn-clear-list").addEventListener("click", () => {
   }
 });
 
-/* ==========================================================================
-   5. EKSPOR KE RTF DAN SALIN (HANGING INDENT & DOUBLE SPACE KUNCIAN)
-   ========================================================================== */
+/*EKSPOR KE RTF DAN SALIN*/
 
 // 1. Ekspor ke File Word (.RTF)
 document.getElementById("btn-export-rtf").addEventListener("click", () => {
@@ -203,7 +193,7 @@ document.getElementById("btn-export-rtf").addEventListener("click", () => {
 
   rtf += "}";
 
-  // Memicu pengunduhan file
+  // pengunduhan file
   const blob = new Blob([rtf], { type: "application/rtf" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -213,12 +203,11 @@ document.getElementById("btn-export-rtf").addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-// 2. Salin Semua ke Clipboard Word
+// Salin Semua ke Clipboard Word
 document.getElementById("btn-copy-all").addEventListener("click", () => {
   if (daftarPustaka.length === 0) return;
 
   const temp = document.createElement("div");
-  // Suntikan CSS inline ini adalah senjata utama agar Word mengenali format web
   temp.innerHTML = `<div style="font-family: 'Times New Roman', serif; font-size: 12pt; line-height: 2.0;">${listDapus.innerHTML}</div>`;
 
   document.body.appendChild(temp);
@@ -232,13 +221,11 @@ document.getElementById("btn-copy-all").addEventListener("click", () => {
   document.body.removeChild(temp);
 
   alert(
-    "Daftar berhasil disalin! Silakan Paste (Ctrl+V) di Word. Jika baris kedua belum menjorok, tekan Ctrl+T.",
+    "Daftar berhasil disalin! Silakan Paste di Word. Jika baris kedua belum menjorok, tekan Ctrl+T.",
   );
 });
 
-/* ==========================================================================
-   6. EVENT LISTENERS FORM AKTIF
-   ========================================================================== */
+/*EVENT LISTENERS FORM AKTIF*/
 tipeSumber.addEventListener("change", () => {
   groupJurnal.style.display =
     tipeSumber.value === "Jurnal Ilmiah" ? "block" : "none";
