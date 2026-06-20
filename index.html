@@ -209,7 +209,7 @@
                     <button
                       class="btn-classic btn-primary"
                       id="btn-export-rtf"
-                      style="margin-bottom: 0;"
+                      style="margin-bottom: 0"
                     >
                       DOWNLOAD .RTF
                     </button>
@@ -352,7 +352,7 @@
                     id="saran-pesan"
                     class="classic-input"
                     rows="4"
-                    placeholder="Tuliskan saran dan kritik perbaikan aplikasi di sini..."
+                    placeholder="Tuliskan saran dan kritik perbaikan platform di sini..."
                   ></textarea>
                 </div>
                 <button
@@ -377,17 +377,21 @@
 
         if (!nama || !pesan) {
           alert(
-            "Mohon isi nama dan pesan saran dan kritik Anda terlebih dahulu.",
+            "Mohon isi nama dan pesan, saran dan kritik Anda terlebih dahulu.",
           );
           return;
         }
 
         const teksFormat = `Halo, saya *${nama}* ingin memberikan saran dan kritik untuk web *DapusH*:\n\n"${pesan}"`;
-        const URL_WA = `https://wa.me/62857553056088?text=${encodeURIComponent(teksFormat)}`;
+        const URL_WA = `https://wa.me/6285755305608?text=${encodeURIComponent(teksFormat)}`;
 
         window.open(URL_WA, "_blank");
       }
     </script>
     <script src="script.js"></script>
+    <footer class="classic-footer">
+      <p>&copy; 2026 Mohamad Dwiki Rozak. All Rights Reserved.</p>
+      <p class="footer-sub">DapusH - Academic Citation Tools</p>
+    </footer>
   </body>
 </html>

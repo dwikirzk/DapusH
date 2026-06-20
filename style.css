@@ -1,4 +1,6 @@
-/* SMOOTH SCROLL */
+/* DapusH - Copyright (c) 2026 Mohamad Dwiki Rozak */
+
+/* smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -73,7 +75,7 @@ body {
   padding-bottom: 4px;
 }
 
-/* Membuat garis bawah tersembunyi di awal */
+/* membuat garis bawah tersembunyi di awal */
 .nav-item::after {
   content: "";
   position: absolute;
@@ -87,12 +89,12 @@ body {
   transition: transform 0.5s ease-out;
 }
 
-/* Saat di-hover, garis akan memanjang mulus */
+/* saat di-hover, garis akan memanjang mulus */
 .nav-item:hover::after {
   transform: scaleX(1);
 }
 
-/* MINI LANDING PAGE AREA */
+/* landing page */
 .mini-landing {
   text-align: center;
   padding: 140px 0px;
@@ -115,7 +117,7 @@ body {
   margin-bottom: 35px;
 }
 
-/* Tombol Khusus Landing Page*/
+/* button landing page*/
 .btn-landing {
   display: inline-block;
   width: auto;
@@ -124,7 +126,7 @@ body {
   margin: 0 auto;
 }
 
-/* WORKSPACE GRID INTERFACE */
+/* grid interface */
 .workspace-grid {
   display: table;
   width: 100%;
@@ -155,7 +157,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* CARDS STRUCTURAL */
+/* card */
 .classic-card {
   background: #ffffff;
   border: 2px solid #3d2712;
@@ -172,7 +174,7 @@ body {
   padding-bottom: 5px;
 }
 
-/* INTERFACE FIELD FORM INPUTS */
+/* form input */
 .form-group {
   margin-bottom: 14px;
 }
@@ -184,7 +186,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* DROPDOWN & FORM INPUT TEMA KLASIK RETRO */
+/* dropdown option */
 .classic-input {
   width: 100%;
   padding: 10px;
@@ -217,7 +219,7 @@ select.classic-input {
   box-shadow: 2px 2px 0px #6e543c;
 }
 
-/* Efek Fokus saat Elemen Dropdown Diklik */
+/* efek Fokus saat dropdown diklik */
 select.classic-input:focus,
 select.classic-input:active {
   outline: none;
@@ -227,7 +229,7 @@ select.classic-input:active {
   transform: translate(-2px, -2px);
 }
 
-/* Mengatur Warna List Pilihan di Dalam Dropdown */
+/* warna dalam dropdown */
 select.classic-input option {
   background-color: #fdfbf7;
   color: #3d2712;
@@ -249,7 +251,7 @@ textarea.classic-input {
   resize: none;
 }
 
-/* LIVE OUTPUT CONTAINER & PREVIEW ATURAN GANTUNG */
+/* output preview */
 .label-preview {
   display: block;
   font-size: 9.5pt;
@@ -275,7 +277,7 @@ textarea.classic-input {
   text-align: left;
 }
 
-/* BUTTON KLASIK RETRO*/
+/* button tema klasik retro */
 .btn-classic {
   display: block;
   width: 100%;
@@ -320,7 +322,7 @@ textarea.classic-input {
   box-shadow: 2px 2px 0px #3d2712;
 }
 
-/* WARNA KHUSUS TOMBOL EKSPOR (HIJAU & BIRU) */
+/* warna button ekspor */
 #btn-copy-all {
   background-color: #2f5c35;
   border-color: #1f3d23;
@@ -339,7 +341,7 @@ textarea.classic-input {
   background-color: #004494;
 }
 
-/* ABOUT */
+/* about */
 .about-grid {
   display: table;
   width: 100%;
@@ -400,9 +402,27 @@ textarea.classic-input {
   font-size: 8.5pt;
 }
 
-/* TAMBAHAN KECIL UNTUK LIST DAFTAR PUSTAKA */
 .dapus-item {
   margin-bottom: 15px;
   padding-left: 36px;
   text-indent: -36px;
+}
+/* footer copyright */
+.classic-footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 2px solid #3d2712;
+  margin-top: 60px;
+  font-family: "Georgia", serif;
+  font-size: 9pt;
+  color: #6e543c;
+  background-color: #fdfbf7;
+}
+
+.footer-sub {
+  margin-top: 5px;
+  font-weight: italic;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

@@ -1,4 +1,6 @@
-/*DEKLARASI ELEMEN DOM*/
+/* DapusH - Copyright (c) 2026 Mohamad Dwiki Rozak */
+
+/* konfigurasi elemen dom */
 const tipeSumber = document.getElementById("tipe-sumber");
 const formatSitasi = document.getElementById("format-sitasi");
 
@@ -18,7 +20,7 @@ const countDapus = document.getElementById("count-dapus");
 
 let daftarPustaka = [];
 
-/*FUNGSI PEMBANTU NAMA*/
+/* fungsi untuk memformat nama penulis */
 function getNama(n, type) {
   if (!n) return "Penulis";
   const k = n.trim().split(/\s+/);
@@ -34,7 +36,7 @@ function getNama(n, type) {
   return n;
 }
 
-/*GENERATOR*/
+/* generator string sitasi */
 function generateStringSitasi() {
   const p = inputPenulis.value;
   const t = inputTahun.value || "Tahun";
@@ -109,7 +111,7 @@ function updateLivePreview() {
   livePreview.innerHTML = generateStringSitasi();
 }
 
-/*SISTEM MANAJEMEN DAFTAR PUSTAKA */
+/* fungsi untuk merender daftar pustaka */
 function renderList() {
   listDapus.innerHTML = "";
   if (daftarPustaka.length === 0) {
@@ -147,7 +149,7 @@ document.getElementById("btn-clear-list").addEventListener("click", () => {
   }
 });
 
-// Salin Semua
+// button salin semua
 document.getElementById("btn-copy-all").addEventListener("click", function () {
   if (daftarPustaka.length === 0) return;
   const temp = document.createElement("div");
@@ -163,7 +165,7 @@ document.getElementById("btn-copy-all").addEventListener("click", function () {
   alert("Disalin! Jika gantung belum muncul, tekan Ctrl+T di Word.");
 });
 
-// Download RTF
+// button download .rtf
 document
   .getElementById("btn-export-rtf")
   .addEventListener("click", function () {
