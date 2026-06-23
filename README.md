@@ -5,7 +5,7 @@
 ## Identitas Pengembang
 
 - **Nama:** Mohamad Dwiki Rozak
-- **Program Studi:** Informatika 
+- **Program Studi:** Informatika
 
 ## Maksud dan Tujuan
 
@@ -59,7 +59,7 @@ DapusH memiliki fitur unggulan berupa **Download .RTF**, di mana hasil daftar pu
 
 ## Fungsi Utama JavaScript
 
-Sistem DapusH berjalan sepenuhnya di sisi klien (_client-side_) menggunakan logika JavaScript seperti beriku :
+Sistem DapusH berjalan sepenuhnya di sisi klien (_client-side_) menggunakan logika JavaScript seperti berikut :
 
 - **`getNama()`**: Fungsi pembantu (_helper_) untuk memecah dan memanipulasi _string_ nama penulis menjadi berbagai format (seperti inisial untuk APA, nama utuh dibalik untuk MLA, atau penulisan ringkas untuk Vancouver).
 - **`generateStringSitasi()`**: Fungsi inti (generator) yang membaca nilai dari form input, lalu merakitnya menggunakan _Template Literals_ sesuai dengan struktur dan aturan tanda baca dari masing-masing gaya sitasi (APA, IEEE, MLA, Chicago, Harvard, Vancouver).

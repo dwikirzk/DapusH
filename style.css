@@ -75,7 +75,6 @@ body {
   padding-bottom: 4px;
 }
 
-/* membuat garis bawah tersembunyi di awal */
 .nav-item::after {
   content: "";
   position: absolute;
@@ -89,7 +88,6 @@ body {
   transition: transform 0.5s ease-out;
 }
 
-/* saat di-hover, garis akan memanjang mulus */
 .nav-item:hover::after {
   transform: scaleX(1);
 }
@@ -101,7 +99,6 @@ body {
   border-bottom: 2px solid #3d2712;
   margin-bottom: 20px;
 }
-
 .landing-title {
   font-size: 60pt;
   font-weight: bold;
@@ -109,7 +106,6 @@ body {
   margin-bottom: 10px;
   color: #3d2712;
 }
-
 .landing-tagline {
   font-style: italic;
   font-size: 20pt;
@@ -134,20 +130,16 @@ body {
   padding-top: 50px;
   margin-bottom: 20px;
 }
-
 .workspace-row {
   display: table-row;
 }
-
 .workspace-cell {
   display: table-cell;
   vertical-align: top;
 }
-
 .col-form {
   padding-right: 20px;
 }
-
 .col-output {
   padding-left: 20px;
 }
@@ -178,7 +170,6 @@ body {
 .form-group {
   margin-bottom: 14px;
 }
-
 .form-group label {
   display: block;
   font-size: 9.5pt;
@@ -186,7 +177,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* dropdown option */
+/* dropdown & inputs */
 .classic-input {
   width: 100%;
   padding: 10px;
@@ -199,27 +190,21 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Elemen <select> (Dropdown) */
 select.classic-input {
   font-family: "Georgia", serif;
   font-weight: bold;
   cursor: pointer;
   background-color: #fdfbf7;
-
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%233d2712' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 14px;
   padding-right: 35px;
-
   box-shadow: 2px 2px 0px #6e543c;
 }
-
-/* efek Fokus saat dropdown diklik */
 select.classic-input:focus,
 select.classic-input:active {
   outline: none;
@@ -228,8 +213,6 @@ select.classic-input:active {
   box-shadow: 4px 4px 0px #3d2712;
   transform: translate(-2px, -2px);
 }
-
-/* warna dalam dropdown */
 select.classic-input option {
   background-color: #fdfbf7;
   color: #3d2712;
@@ -237,7 +220,6 @@ select.classic-input option {
   font-weight: bold;
   padding: 10px;
 }
-
 .classic-input:focus {
   outline: none;
   background-color: #ffffff;
@@ -259,7 +241,6 @@ textarea.classic-input {
   margin-top: 15px;
   margin-bottom: 5px;
 }
-
 .output-container {
   background-color: #fdfbf7;
   border: 1px solid #3d2712;
@@ -267,7 +248,6 @@ textarea.classic-input {
   min-height: 110px;
   margin-bottom: 15px;
 }
-
 .dapus-preview {
   font-family: "Times New Roman", Times, serif;
   font-size: 11pt;
@@ -277,7 +257,7 @@ textarea.classic-input {
   text-align: left;
 }
 
-/* button tema klasik retro */
+/* button */
 .btn-classic {
   display: block;
   width: 100%;
@@ -291,17 +271,14 @@ textarea.classic-input {
   border: 2px solid #3d2712;
   transition: all 0.2s ease;
 }
-
 .btn-primary {
   background-color: #3d2712;
   color: #ffffff;
   box-shadow: 4px 4px 0px #6e543c;
 }
-
 .btn-primary:hover {
   background-color: #4e351b;
 }
-
 .btn-primary:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #6e543c;
@@ -312,17 +289,25 @@ textarea.classic-input {
   color: #3d2712;
   box-shadow: 4px 4px 0px #3d2712;
 }
-
 .btn-secondary:hover {
   background-color: #fdfbf7;
 }
-
 .btn-secondary:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #3d2712;
 }
 
-/* warna button ekspor */
+/* group button copy & .rtf */
+.action-buttons-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.action-buttons-group .btn-classic {
+  flex: 1;
+  margin-bottom: 0;
+}
+
 #btn-copy-all {
   background-color: #2f5c35;
   border-color: #1f3d23;
@@ -331,7 +316,6 @@ textarea.classic-input {
 #btn-copy-all:hover {
   background-color: #244629;
 }
-
 #btn-export-rtf {
   background-color: #0056b3;
   border-color: #003d82;
@@ -347,53 +331,46 @@ textarea.classic-input {
   width: 100%;
   table-layout: fixed;
 }
-
 .about-row {
   display: table-row;
 }
-
 .about-cell {
   display: table-cell;
   vertical-align: top;
 }
-
 .info-text {
   padding-right: 30px;
   font-size: 10pt;
   text-align: justify;
 }
-
 .info-text h3 {
   font-size: 11pt;
   margin-bottom: 5px;
   text-transform: uppercase;
   color: #3d2712;
 }
-
 .info-form {
   padding-left: 20px;
   border-left: 1px dashed #3d2712;
 }
-
 .info-form h3 {
   font-size: 11pt;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
+/* table panduan */
 .classic-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
-
 .classic-table th,
 .classic-table td {
   border: 1px solid #3d2712;
   padding: 10px;
   font-size: 9.5pt;
 }
-
 .classic-table th {
   background-color: #3d2712;
   color: #ffffff;
@@ -401,12 +378,12 @@ textarea.classic-input {
   text-transform: uppercase;
   font-size: 8.5pt;
 }
-
 .dapus-item {
   margin-bottom: 15px;
   padding-left: 36px;
   text-indent: -36px;
 }
+
 /* footer copyright */
 .classic-footer {
   text-align: center;
@@ -418,11 +395,133 @@ textarea.classic-input {
   color: #6e543c;
   background-color: #fdfbf7;
 }
-
 .footer-sub {
   margin-top: 5px;
-  font-weight: italic;
+  font-style: italic;
   font-size: 8.5pt;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Sembunyikan tombol toggle Panduan di Desktop */
+#btn-toggle-panduan {
+  display: none;
+}
+#wrapper-tabel-panduan {
+  display: block;
+}
+
+/* responsive layout handphone */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .nav-logo {
+    display: block;
+    text-align: center;
+    font-size: 14pt;
+    margin-bottom: 10px;
+  }
+  .nav-menu {
+    display: block;
+    text-align: center;
+  }
+  .nav-item {
+    font-size: 8.5pt;
+    margin: 0 8px;
+  }
+
+  .mini-landing {
+    padding: 80px 20px 40px 20px;
+  }
+  .landing-title {
+    font-size: 38pt;
+  }
+  .landing-tagline {
+    font-size: 12pt;
+    margin-bottom: 25px;
+  }
+  .btn-landing {
+    font-size: 10pt;
+    padding: 12px 20px;
+    width: 90%;
+  }
+
+  .workspace-grid,
+  .workspace-row,
+  .workspace-cell {
+    display: block;
+    width: 100%;
+  }
+  .col-form {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .col-output {
+    padding-left: 0;
+  }
+
+  /* font ukuran */
+  .section-title {
+    font-size: 11pt;
+  }
+  .classic-input,
+  .btn-classic {
+    font-size: 9.5pt;
+  }
+
+  .action-buttons-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .action-buttons-group .btn-classic {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  /* button panduan */
+  #btn-toggle-panduan {
+    display: block;
+    width: 100%;
+    font-size: 9pt;
+    margin-bottom: 15px;
+  }
+  /* hide tabel panduan */
+  #wrapper-tabel-panduan {
+    display: none;
+    overflow-x: auto;
+    padding-top: 10px;
+  }
+  #wrapper-tabel-panduan.tampil-di-hp {
+    display: block;
+  }
+
+  /* font kecil table */
+  .classic-table th,
+  .classic-table td {
+    font-size: 8pt;
+    padding: 8px;
+  }
+
+  /* section about */
+  .about-grid,
+  .about-row,
+  .about-cell {
+    display: block;
+    width: 100%;
+  }
+  .info-text {
+    padding-right: 0;
+    margin-bottom: 35px;
+    font-size: 9.5pt;
+  }
+  .info-form {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px dashed #3d2712;
+    padding-top: 25px;
+  }
 }

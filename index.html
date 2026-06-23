@@ -180,41 +180,21 @@
                   >Kumpulan Daftar Pustaka:
                   <span id="count-dapus">(0)</span></label
                 >
-
                 <div
                   class="output-container"
                   id="list-dapus"
                   style="min-height: 150px; background-color: #fff"
                 ></div>
 
-                <div
-                  style="
-                    display: table;
-                    width: 100%;
-                    table-layout: fixed;
-                    border-spacing: 10px 0;
-                    margin-left: -10px;
-                  "
-                >
-                  <div style="display: table-cell">
-                    <button
-                      class="btn-classic btn-primary"
-                      id="btn-copy-all"
-                      style="margin-bottom: 0"
-                    >
-                      SALIN SEMUA
-                    </button>
-                  </div>
-                  <div style="display: table-cell">
-                    <button
-                      class="btn-classic btn-primary"
-                      id="btn-export-rtf"
-                      style="margin-bottom: 0"
-                    >
-                      DOWNLOAD .RTF
-                    </button>
-                  </div>
+                <div class="action-buttons-group">
+                  <button class="btn-classic btn-primary" id="btn-copy-all">
+                    SALIN SEMUA
+                  </button>
+                  <button class="btn-classic btn-primary" id="btn-export-rtf">
+                    DOWNLOAD .RTF
+                  </button>
                 </div>
+
                 <button
                   class="btn-classic btn-secondary"
                   id="btn-clear-list"
@@ -234,77 +214,92 @@
 
       <section class="app-section" id="panduan-section">
         <h2 class="section-title">Panduan Kategori Format</h2>
-        <table class="classic-table">
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Rumpun Ilmu / Jurusan</th>
-              <th>Karakteristik Utama</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>APA (7th Ed.)</strong></td>
-              <td>
-                Sosial, Psikologi, Pendidikan, Bisnis, Ekonomi, Ilmu Komunikasi
-              </td>
-              <td>
-                Nama belakang ditulis penuh diikuti inisial depan. Tahun terbit
-                diletakkan di awal menggunakan tanda kurung setelah nama
-                penulis. Judul buku dicetak miring.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>IEEE</strong></td>
-              <td>
-                Informatika, Teknik Elektro, Ilmu Komputer, Sistem Informasi,
-                Teknologi Informasi
-              </td>
-              <td>
-                Urutan rujukan tidak berdasarkan abjad, melainkan berdasarkan
-                urutan kemunculan di teks menggunakan nomor dalam kurung siku
-                <code>[1]</code>.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>MLA (9th Ed.)</strong></td>
-              <td>Sastra, Bahasa, Seni, Kebudayaan, Humaniora</td>
-              <td>
-                Nama depan penulis ditulis utuh tanpa disingkat. Tahun terbit
-                diletakkan di paling akhir string sitasi setelah nama penerbit.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Chicago</strong></td>
-              <td>Sejarah, Humaniora, Seni, Beberapa Jurnal Sastra</td>
-              <td>
-                Sangat ketat pada penggunaan tanda baca. Menggunakan format
-                tanda titik dua <code>:</code> yang memisahkan antara Kota
-                Terbit dan Nama Penerbit.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Harvard</strong></td>
-              <td>Ilmu Ekonomi, Manajemen, Akuntansi, Bisnis Internasional</td>
-              <td>
-                Menggunakan sistem Author-Date. Tanpa menggunakan tanda titik
-                setelah penulisan inisial nama depan penulis.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Vancouver</strong></td>
-              <td>
-                Kedokteran, Ilmu Keperawatan, Farmasi, Kebidanan, Kesehatan
-                Masyarakat
-              </td>
-              <td>
-                Menggunakan sistem penomoran angka numerik berurutan
-                <code>1.</code> langsung tanpa tanda kurung penutup. Penulisan
-                nama penulis sangat ringkas.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
+        <button
+          id="btn-toggle-panduan"
+          class="btn-classic btn-secondary"
+          onclick="togglePanduan()"
+        >
+          KLIK PANDUAN DAFTAR PUSTAKA DISINI
+        </button>
+
+        <div id="wrapper-tabel-panduan">
+          <table class="classic-table">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Rumpun Ilmu / Jurusan</th>
+                <th>Karakteristik Utama</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>APA (7th Ed.)</strong></td>
+                <td>
+                  Sosial, Psikologi, Pendidikan, Bisnis, Ekonomi, Ilmu
+                  Komunikasi
+                </td>
+                <td>
+                  Nama belakang ditulis penuh diikuti inisial depan. Tahun
+                  terbit diletakkan di awal menggunakan tanda kurung setelah
+                  nama penulis. Judul buku dicetak miring.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>IEEE</strong></td>
+                <td>
+                  Informatika, Teknik Elektro, Ilmu Komputer, Sistem Informasi,
+                  Teknologi Informasi
+                </td>
+                <td>
+                  Urutan rujukan tidak berdasarkan abjad, melainkan berdasarkan
+                  urutan kemunculan di teks menggunakan nomor dalam kurung siku
+                  <code>[1]</code>.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>MLA (9th Ed.)</strong></td>
+                <td>Sastra, Bahasa, Seni, Kebudayaan, Humaniora</td>
+                <td>
+                  Nama depan penulis ditulis utuh tanpa disingkat. Tahun terbit
+                  diletakkan di paling akhir string sitasi setelah nama
+                  penerbit.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Chicago</strong></td>
+                <td>Sejarah, Humaniora, Seni, Beberapa Jurnal Sastra</td>
+                <td>
+                  Sangat ketat pada penggunaan tanda baca. Menggunakan format
+                  tanda titik dua <code>:</code> yang memisahkan antara Kota
+                  Terbit dan Nama Penerbit.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Harvard</strong></td>
+                <td>
+                  Ilmu Ekonomi, Manajemen, Akuntansi, Bisnis Internasional
+                </td>
+                <td>
+                  Menggunakan sistem Author-Date. Tanpa menggunakan tanda titik
+                  setelah penulisan inisial nama depan penulis.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Vancouver</strong></td>
+                <td>
+                  Kedokteran, Ilmu Keperawatan, Farmasi, Kebidanan, Kesehatan
+                  Masyarakat
+                </td>
+                <td>
+                  Menggunakan sistem penomoran angka numerik berurutan
+                  <code>1.</code> langsung tanpa tanda kurung penutup. Penulisan
+                  nama penulis sangat ringkas.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section class="app-section" id="about-section">
@@ -370,6 +365,11 @@
       </section>
     </div>
 
+    <footer class="classic-footer">
+      <p>&copy; 2026 Mohamad Dwiki Rozak. All Rights Reserved.</p>
+      <p class="footer-sub">DapusH - Academic Citation Tools</p>
+    </footer>
+
     <script>
       function kirimSaranWA() {
         const nama = document.getElementById("saran-nama").value;
@@ -381,17 +381,18 @@
           );
           return;
         }
-
         const teksFormat = `Halo, saya *${nama}* ingin memberikan saran dan kritik untuk web *DapusH*:\n\n"${pesan}"`;
         const URL_WA = `https://wa.me/6285755305608?text=${encodeURIComponent(teksFormat)}`;
-
         window.open(URL_WA, "_blank");
+      }
+
+      // fungsi panduan di HP
+      function togglePanduan() {
+        document
+          .getElementById("wrapper-tabel-panduan")
+          .classList.toggle("tampil-di-hp");
       }
     </script>
     <script src="script.js"></script>
-    <footer class="classic-footer">
-      <p>&copy; 2026 Mohamad Dwiki Rozak. All Rights Reserved.</p>
-      <p class="footer-sub">DapusH - Academic Citation Tools</p>
-    </footer>
   </body>
 </html>
